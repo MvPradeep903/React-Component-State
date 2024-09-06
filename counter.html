@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Counter Example</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        function Counter() {
+            // Declare a state variable named 'count' with an initial value of 0
+            const [count, setCount] = React.useState(0);
+
+            // Function to increment the count
+            const increment = () => {
+                setCount(count + 1);
+            };
+
+            // Function to decrement the count
+            const decrement = () => {
+                setCount(count - 1);
+            };
+
+            return (
+                <div>
+                    <h1>Counter: {count}</h1>
+                    <button onClick={increment}>Increment</button>
+                    <button onClick={decrement}>Decrement</button>
+                </div>
+            );
+        }
+
+        // Render the Counter component into the DOM element with the ID 'root'
+        ReactDOM.render(<Counter />, document.getElementById('root'));
+    </script>
+</body>
+</html>
